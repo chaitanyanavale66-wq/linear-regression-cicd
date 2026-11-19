@@ -1,5 +1,7 @@
 
 import numpy as np
+import numpy as np
+from src.model import train_model, predict, evaluate_model
 
 from src.model import train_model, predict
 
@@ -34,3 +36,16 @@ def test_model_score():
     model = train_model(X, y)
 
     assert model.score(X, y) > 0.95
+
+
+def test_evaluate_model():
+    X = np.array([[500], [600], [700], [800]])
+    y = np.array([25, 30, 35, 40])
+
+    model = train_model(X, y)
+
+    score = evaluate_model(model, X, y)
+
+    assert score > 0.95
+
+
