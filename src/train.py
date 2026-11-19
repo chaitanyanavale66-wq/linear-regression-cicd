@@ -1,7 +1,7 @@
 
 import numpy as np
 import joblib
-
+from src.model import train_model, predict
 from src.model import train_model, predict
 
 
